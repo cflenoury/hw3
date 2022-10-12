@@ -67,9 +67,17 @@ void dealloc(Node* head)
 //   function object struct declarations
 // -----------------------------------------------
 
+struct isNeg{
+	bool operator()(int x){	return x <0 ;}
+};
 
+struct isEven{
+	bool operator()(int x){	return x%2 == 0 ;}
+};
 
-
+struct greaterThanXX{
+	bool operator()(int x){	return x > 20 ;}
+};
 
 int main(int argc, char* argv[])
 {
@@ -87,9 +95,27 @@ int main(int argc, char* argv[])
 
     // Test out your linked list code
 
+		//Testing Llpivot
+    // Node* smaller = nullptr;
+    // Node* larger = nullptr;
 
+    // llpivot(head, smaller, larger, 20);
 
+    // print(head);
+    // print(smaller);
+    // print(larger);
+
+		isEven c1;
+		isNeg c2;
+		greaterThanXX c3;
+
+		//Node* fin1 = llfilter(head, c1);
+		//Node* fin2 = llfilter(head, c2);
+		Node* fin3 = llfilter(head, c3);
+
+		///print(fin1);
+		//print(fin2);
+		print(fin3);
     
     return 0;
-
 }
