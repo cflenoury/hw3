@@ -30,4 +30,12 @@ int main(int argc, char* argv[]){
 	cout << "This is on top: " << stack1.top() << endl;
 	cout << "Size: " << stack1.size() << endl << "Empty? " << stack1.empty() << endl;
 	
+
+	cout << "Testing errors\n";
+
+	for (int i = 1; i <= 7; i++){
+		stack1.pop();
+	}
+	
+	stack1.top();
 }

@@ -43,11 +43,17 @@ void Stack<T>::push(const T& item){
 
 template <typename T>
 void Stack<T>::pop(){
+    if(empty()){
+        throw std::underflow_error("Stack is empty.");
+    }
 	std::vector<T>::pop_back();//Remove last item in vector (most recently added)
 }
 
 template <typename T>
 const T& Stack<T>::top() const{
+    if(empty()){
+        throw std::underflow_error("Stack is empty.");
+    }
 	return std::vector<T>::back();//Retrieve item at the back of the underlying array in the vector
 }
 
