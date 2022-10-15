@@ -23,6 +23,12 @@ llrec.o: llrec.cpp llrec.h
 stack_test.o: stack_test.cpp stack.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+valgrind1: stack_test
+	$(VALGRIND) ./stack_test
+
+valgrind2: llrec_test
+	$(VALGRIND) ./llrec-test
+
 clean:
 	rm -f *.o rh llrec-test stack_test *~
 
